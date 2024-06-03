@@ -7,7 +7,6 @@ std::vector<int> playCrabCups(const std::vector<int>& cups, int moves) {
     std::unordered_map<int, int> next;
     int size = cups.size();
 
-    // Initialize the next cup map
     for (int i = 0; i < size; ++i) {
         next[cups[i]] = cups[(i + 1) % size];
     }
@@ -34,7 +33,6 @@ std::vector<int> playCrabCups(const std::vector<int>& cups, int moves) {
         current = next[current];
     }
 
-    // Collect the result starting from cup 1
     std::vector<int> result;
     int cup = next[1];
     for (int i = 1; i < size; ++i) {
